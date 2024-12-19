@@ -1,0 +1,779 @@
+@media (max-width: 390px) {
+  section {
+    padding: 16px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(
+      2,
+      1fr
+    ); /* Duas colunas para itens em telas menores */
+    gap: 16px; /* Ajusta o espaçamento */
+  }
+
+  .store-grid {
+    grid-template-columns: repeat(
+      1,
+      1fr
+    ); /* Uma coluna para lojas em telas menores */
+    gap: 16px;
+  }
+
+  .store-card {
+    flex-direction: column; /* Empilha o conteúdo em telas pequenas */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    gap: 8px; /* Espaço entre avatar e banner */
+  }
+
+  .store-banner {
+    width: 100%;
+    height: auto; /* Ajusta para largura total em telas menores */
+  }
+}
+/* Layout para dispositivos móveis pequenos (largura máxima de 576px) */
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: repeat(1, 1fr); /* Apenas uma coluna */
+  }
+
+  .scroll-container img {
+    height: 150px; /* Reduz a altura da imagem de destaque */
+  }
+
+  .store-info {
+    gap: 4px; /* Reduz o espaçamento entre imagem e texto */
+  }
+
+  footer button span {
+    font-size: 10px; /* Texto menor no footer */
+  }
+}
+
+/* Layout para dispositivos médios (largura máxima de 768px) */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  }
+
+  .scroll-container img {
+    height: 180px; /* Altura intermediária das imagens */
+  }
+}
+
+/* Layout para dispositivos grandes (largura mínima de 769px) */
+@media (min-width: 769px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr); /* Três colunas */
+  }
+
+  .scroll-container img {
+    height: 200px; /* Tamanho original */
+  }
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 100px;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 16px 16px;
+  max-width: 390px; /* Limita a largura da seção ao tamanho da tela do iPhone 12 Pro */
+  margin: 0 auto; /* Centraliza as seções na tela */
+}
+
+img {
+  max-width: 100%; /* Impede que as imagens ultrapassem o contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff8f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+
+header .center-content {
+  display: flex;
+  align-items: center; /* Centraliza o texto e a seta verticalmente */
+  color: #4a4a4a; /* Cor do texto e do ícone */
+}
+
+header .center-content p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0; /* Remove margens padrão */
+  white-space: nowrap; /* Evita quebra de linha */
+}
+
+header .center-content i {
+  margin-left: 4px; /* Espaço entre o texto e a seta */
+  font-size: 16px; /* Tamanho da seta */
+}
+
+header i.material-icons {
+  color: #53433f; /* Define a cor do ícone */
+  font-size: 24px; /* Tamanho do ícone */
+}
+
+header button {
+  background: none; /* Remove o fundo */
+  border-radius: 50%; /* Torna o botão circular */
+  padding: 8px; /* Ajusta o tamanho interno */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Adiciona o cursor de clique */
+  border-width: 0;
+}
+
+header button i.material-icons {
+  color: #53433f; /* Define a cor do ícone */
+  font-size: 20px; /* Tamanho do ícone */
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 500;
+}
+
+nav button {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #666;
+}
+
+nav button.active {
+  color: #8f4b38;
+  border-bottom: 2px solid #8f4b38;
+}
+
+section {
+  padding: 16px;
+}
+
+section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
+  padding: 0 16px; /* Adiciona um espaçamento interno */
+}
+
+.scroll-container div {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 90%;
+  max-width: 100%;
+}
+
+.scroll-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 100%;
+}
+
+.card {
+  background-color: #fff8f6;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+}
+.image-container img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 24px; /* Tamanho do ícone */
+  color: black; /* Define a cor da borda do ícone */
+  background-color: white; /* Preenchimento branco */
+  border-radius: 50%; /* Caso o ícone precise de contorno circular */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px; /* Tamanho do círculo */
+  height: 32px; /* Tamanho do círculo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor */
+}
+
+.item-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 8px 0 4px;
+  color: #333;
+}
+
+.price {
+  color: #b5651d;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.more-icon {
+  margin-left: auto;
+  color: #888;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin: 4px 0;
+}
+
+.card .price {
+  color: #b5651d;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Estilo da grade */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  gap: 24px; /* Espaçamento entre os itens */
+  max-width: 100%;
+}
+
+/* Estilo do cartão da loja */
+.store-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff8f6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+/* Informações da loja (avatar e nome) */
+.store-info {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o avatar e o texto */
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.store-info img {
+  flex-shrink: 0; /* Evita que a imagem diminua de tamanho */
+}
+
+.store-info .more-icon {
+  margin-left: auto; /* Empurra os três pontos para o lado direito */
+  color: #888; /* Define a cor dos três pontos */
+  cursor: pointer; /* Adiciona o cursor de clique */
+  font-size: 18px; /* Ajusta o tamanho dos três pontos */
+}
+
+/* Avatar da loja */
+.store-avatar {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50%; /* Torna a imagem circular */
+  object-fit: cover; /* Ajusta a imagem ao contêiner */
+}
+
+/* Nome e tipo da loja */
+.store-name {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+  color: #333;
+}
+
+.store-type {
+  font-size: 12px;
+  margin: 0;
+  color: #888;
+}
+
+/* Banner da loja */
+.store-banner {
+  width: 60px; /* Ajuste o tamanho do banner conforme necessário */
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff8f6;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+}
+
+footer button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+footer button.active {
+  color: #000;
+}
+
+footer button.active::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ffdbd1;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+footer span {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 4px;
+  right: -4px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  position: relative; /* Necessário para a pseudo-classe */
+  display: inline-block; /* Ajusta o tamanho da linha para o texto */
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 100%; /* Alinha com o texto */
+  height: 2px; /* Espessura da linha */
+  background-color: #d8c2bc; /* Cor da linha */
+  margin-top: 4px; /* Espaçamento entre o texto e a linha */
+}
+body {
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 100px;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 16px 16px;
+  max-width: 390px; /* Limita a largura da seção ao tamanho da tela do iPhone 12 Pro */
+  margin: 0 auto; /* Centraliza as seções na tela */
+}
+
+img {
+  max-width: 100%; /* Impede que as imagens ultrapassem o contêiner */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+.header-container {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background-color: #fff8f6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  padding: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 0;
+}
+
+header .center-content {
+  display: flex;
+  align-items: center; /* Centraliza o texto e a seta verticalmente */
+  color: #4a4a4a; /* Cor do texto e do ícone */
+}
+
+header .center-content p {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0; /* Remove margens padrão */
+  white-space: nowrap; /* Evita quebra de linha */
+}
+
+header .center-content i {
+  margin-left: 4px; /* Espaço entre o texto e a seta */
+  font-size: 16px; /* Tamanho da seta */
+}
+
+header i.material-icons {
+  color: #53433f; /* Define a cor do ícone */
+  font-size: 24px; /* Tamanho do ícone */
+}
+
+header button {
+  background: none; /* Remove o fundo */
+  border-radius: 50%; /* Torna o botão circular */
+  padding: 8px; /* Ajusta o tamanho interno */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer; /* Adiciona o cursor de clique */
+  border-width: 0;
+}
+
+header button i.material-icons {
+  color: #53433f; /* Define a cor do ícone */
+  font-size: 20px; /* Tamanho do ícone */
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  font-weight: 500;
+}
+
+nav button {
+  padding: 8px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #666;
+}
+
+nav button.active {
+  color: #8f4b38;
+  border-bottom: 2px solid #8f4b38;
+}
+
+section {
+  padding: 16px;
+}
+
+section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.scroll-container {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
+  padding: 0 16px; /* Adiciona um espaçamento interno */
+}
+
+.scroll-container div {
+  scroll-snap-align: center;
+  flex-shrink: 0;
+  width: 90%;
+  max-width: 100%;
+}
+
+.scroll-container img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 100%;
+}
+
+.card {
+  background-color: #fff8f6;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+}
+.image-container img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.favorite-icon {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  font-size: 24px; /* Tamanho do ícone */
+  color: black; /* Define a cor da borda do ícone */
+  background-color: white; /* Preenchimento branco */
+  border-radius: 50%; /* Caso o ícone precise de contorno circular */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 32px; /* Tamanho do círculo */
+  height: 32px; /* Tamanho do círculo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra ao redor */
+}
+
+.item-title {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 8px 0 4px;
+  color: #333;
+}
+
+.price {
+  color: #b5651d;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.more-icon {
+  margin-left: auto;
+  color: #888;
+  cursor: pointer;
+}
+
+.card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.card p {
+  margin: 4px 0;
+}
+
+.card .price {
+  color: #b5651d;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* Estilo da grade */
+.store-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Duas colunas */
+  gap: 24px; /* Espaçamento entre os itens */
+  max-width: 100%;
+}
+
+/* Estilo do cartão da loja */
+.store-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff8f6;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+/* Informações da loja (avatar e nome) */
+.store-info {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Espaço entre o avatar e o texto */
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.store-info img {
+  flex-shrink: 0; /* Evita que a imagem diminua de tamanho */
+}
+
+.store-info .more-icon {
+  margin-left: auto; /* Empurra os três pontos para o lado direito */
+  color: #888; /* Define a cor dos três pontos */
+  cursor: pointer; /* Adiciona o cursor de clique */
+  font-size: 18px; /* Ajusta o tamanho dos três pontos */
+}
+
+/* Avatar da loja */
+.store-avatar {
+  width: 48px !important;
+  height: 48px !important;
+  border-radius: 50%; /* Torna a imagem circular */
+  object-fit: cover; /* Ajusta a imagem ao contêiner */
+}
+
+/* Nome e tipo da loja */
+.store-name {
+  font-weight: bold;
+  font-size: 14px;
+  margin: 0;
+  color: #333;
+}
+
+.store-type {
+  font-size: 12px;
+  margin: 0;
+  color: #888;
+}
+
+/* Banner da loja */
+.store-banner {
+  width: 60px; /* Ajuste o tamanho do banner conforme necessário */
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover; /* Mantém a proporção da imagem */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff8f6;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 0;
+}
+
+footer button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+footer button.active {
+  color: #000;
+}
+
+footer button.active::before {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background-color: #ffdbd1;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+footer span {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: 4px;
+  right: -4px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  font-size: 10px;
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  position: relative; /* Necessário para a pseudo-classe */
+  display: inline-block; /* Ajusta o tamanho da linha para o texto */
+}
+
+section h2::after {
+  content: "";
+  display: block;
+  width: 100%; /* Alinha com o texto */
+  height: 2px; /* Espessura da linha */
+  background-color: #d8c2bc; /* Cor da linha */
+  margin-top: 4px; /* Espaçamento entre o texto e a linha */
+}
