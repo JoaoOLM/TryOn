@@ -9,96 +9,211 @@
     </head>
 
     <body>
-        <!-- Container Principal com Padding -->
-        <div class="px-10 h-full flex justify-center py-4">
-            <!-- Container com imagem -->
-            <div>
-                <!-- Imagem Principal -->
-                <div class="relative">
-                    <img
-                        src="../assets/home/produto.jpg"
-                        alt="Produto"
-                        class="max-w-[200px] max-h-[200px] w-auto h-auto mx-auto rounded-xl" />
-                    <!-- Indicador de Carrossel -->
-                    <div class="absolute bottom-4 left-0 w-full flex justify-center space-x-1">
-                        <div class="w-2.5 h-2.5 bg-gray-900 rounded-full"></div>
-                        <div class="w-2.5 h-2.5 bg-gray-400 rounded-full"></div>
-                        <div class="w-2.5 h-2.5 bg-gray-400 rounded-full"></div>
-                    </div>
-                </div>
+        <!-- Header -->
+        <header id="header" class="header fixed top-0 left-0 w-full bg-white shadow-md z-50 px-16">
+            <div class="flex items-center justify-between px-4 py-3">
+                <!-- Botão de Voltar -->
+                <button
+                    onclick="history.back()"
+                    class="flex items-center gap-2 text-gray-700 hover:text-gray-900">
+                    <span class="material-icons">arrow_back</span>
+                    <span class="text-sm font-medium">Voltar</span>
+                </button>
+
+                <!-- Título -->
+                <h1 class="text-lg font-semibold text-gray-800" id="headerText">Cabeçalho Fixo</h1>
+
+                <!-- Carrinho de Compras -->
+                <button
+                    class="relative flex items-center text-gray-700 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-gray-300">
+                    <span class="material-icons">shopping_cart</span>
+                    <span
+                        class="absolute top-0 right-0 -mt-1 -mr-2 w-5 h-5 bg-red-500 text-white text-xs font-bold rounded-full flex items-center justify-center">
+                        3
+                    </span>
+                </button>
             </div>
+        </header>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 mt-20 mb-20"></div>
+        <!-- Foto + descrição  -->
+        <div
+            class="flex flex-col sm:flex-row justify-center gap-8 sm:gap-16 max-w-screen max-h-screen mt-20">
+            <img
+                src="../assets/home/produto.jpg"
+                alt="Produto"
+                class="w-full h-auto max-w-[300px] sm:max-w-[500px] lg:max-w-[600px] max-h-[600px] rounded-3xl" />
 
             <!-- Container com descrição do produto -->
-            <div class="flex-col items-start"> 
+            <div class="flex flex-col items-start gap-8 pt-4">
                 <!-- Descrição do Produto -->
-                <div class="p-4 bg-white rounded-t-2xl">
-                    <h3 class="text-sm text-gray-500">Conjunto de moletom</h3>
+                <div class="rounded-t-2xl">
+                    <h3 class="text-xs sm:text-sm text-gray-500">Conjunto de moletom</h3>
                     <div class="flex items-center justify-between">
-                        <h1 class="text-lg font-bold text-gray-800" id="product-name">
+                        <h1 class="text-base sm:text-lg font-bold text-gray-800" id="product-name">
                             Casaco com gola e Calça moletom
                         </h1>
                         <div class="flex items-center">
-                            <span class="text-yellow-400 text-sm font-semibold">★ 4.5</span>
+                            <span class="text-yellow-400 text-xs sm:text-sm font-semibold"
+                                >★ 4.5</span
+                            >
                         </div>
                     </div>
-                    <p class="text-gray-600 mt-2 text-sm">
+                    <p class="text-gray-600 mt-2 text-xs sm:text-sm max-w-[300px] sm:max-w-[400px]">
                         Lorem ipsum dolor sit amet consectetur. Feugiat id aliquam volutpat
                         facilisis senectus mauris ac sagittis. Metus sed sem nulla sed vitae.
                     </p>
                 </div>
 
                 <!-- Escolha Tamanho -->
-                <div class="px-4 py-4">
+                <div class="">
                     <h2 class="font-medium text-gray-700 mb-2">Escolha o tamanho</h2>
-                    <div class="flex gap-2">
+                    <div class="flex gap-2 sm:gap-4">
                         <button
-                            class="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-gray-400">
+                            id="size-p"
+                            class="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-gray-400 hover:bg-gray-300 hover:scale-105 transition duration-200"
+                            onclick="selectSize('P')">
                             P
                         </button>
                         <button
-                            class="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-gray-400">
+                            id="size-m"
+                            class="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-gray-400 hover:bg-gray-300 hover:scale-105 transition duration-200"
+                            onclick="selectSize('M')">
                             M
                         </button>
                         <button
-                            class="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-gray-400">
+                            id="size-g"
+                            class="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-gray-400 hover:bg-gray-300 hover:scale-105 transition duration-200"
+                            onclick="selectSize('G')">
                             G
                         </button>
                         <button
-                            class="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-gray-400">
+                            id="size-gg"
+                            class="border px-4 py-2 rounded-lg focus:ring-2 focus:ring-gray-400 hover:bg-gray-300 hover:scale-105 transition duration-200"
+                            onclick="selectSize('GG')">
                             GG
                         </button>
                     </div>
                 </div>
 
                 <!-- Escolha Cor -->
-                <div class="px-4 py-2">
+                <div class="">
                     <h2 class="font-medium text-gray-700 mb-2">Escolha a cor</h2>
-                    <div class="flex items-center gap-4">
-                        <div class="w-8 h-8 rounded-full bg-red-400 border-2 border-red-500"></div>
-                        <div class="w-8 h-8 rounded-full bg-black"></div>
-                        <div class="w-8 h-8 rounded-full bg-yellow-500"></div>
+                    <div class="flex items-center gap-4 sm:gap-6">
+                        <button
+                            id="color-red"
+                            class="w-8 h-8 rounded-full bg-red-400 hover:scale-110 hover:border-red-700 transition duration-200 focus:ring-2 focus:ring-gray-400"
+                            onclick="selectColor('red')"></button>
+                        <button
+                            id="color-black"
+                            class="w-8 h-8 rounded-full bg-black hover:scale-110 hover:border-gray-600 transition duration-200 focus:ring-2 focus:ring-gray-400"
+                            onclick="selectColor('black')"></button>
+                        <button
+                            id="color-yellow"
+                            class="w-8 h-8 rounded-full bg-yellow-500 hover:scale-110 hover:border-yellow-700 transition duration-200 focus:ring-2 focus:ring-gray-400"
+                            onclick="selectColor('yellow')"></button>
                     </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="flex gap-2">
+                    <button
+                        class="flex-1 h-20 bg-gray-200 rounded-lg text-gray-700 font-semibold hover:bg-gray-300 transition">
+                        Adicionar ao Carrinho
+                    </button>
+                    <button
+                        class="flex-1 h-20 bg-red-500 rounded-lg text-white font-semibold hover:bg-red-600 transition">
+                        Comprar Agora
+                    </button>
                 </div>
             </div>
         </div>
 
-        <!-- Botões de Ação -->
-        <div class="flex items-stretch fixed bottom-0 w-full px-4 py-4 bg-white gap-2 border-t">
-            <button class="w-1/2 bg-gray-200 px-4 py-2 rounded-lg text-gray-700 font-semibold">
-                Adicionar ao Carrinho
-            </button>
-            <button class="w-1/2 h-full bg-red-500 px-4 py-2 rounded-lg text-white font-semibold">
-                Comprar Agora
-            </button>
+        <!-- Avaliações -->
+        <div class="mt-10 max-w-screen-lg mx-auto">
+            <h2 class="text-2xl font-semibold text-gray-800">Avaliações</h2>
+
+            <!-- Lista de Avaliações -->
+            <div id="review-list" class="mt-6 space-y-6">
+                <!-- Avaliação Exemplo -->
+                <div class="bg-gray-100 p-4 rounded-lg">
+                    <div class="flex items-center justify-between">
+                        <h3 class="text-lg font-semibold text-gray-800">João Silva</h3>
+                        <span class="text-yellow-400 font-bold">★★★★★</span>
+                    </div>
+                    <p class="text-gray-600 mt-2">
+                        Produto incrível! Muito confortável e de alta qualidade.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Formulário de Avaliação -->
+            <div class="mt-8">
+                <h3 class="text-lg font-semibold text-gray-800">Deixe sua avaliação</h3>
+                <form id="review-form" class="mt-4 space-y-4">
+                    <textarea
+                        id="review-text"
+                        class="w-full p-3 border border-gray-300 rounded-lg"
+                        placeholder="Escreva sua avaliação"
+                        rows="4"
+                        required></textarea>
+                    <div class="flex items-center gap-2">
+                        <label class="font-medium text-gray-700">Nota:</label>
+                        <select
+                            id="review-rating"
+                            class="p-2 border border-gray-300 rounded-lg"
+                            required>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="1">★</option>
+                            <option value="2">★★</option>
+                            <option value="3">★★★</option>
+                            <option value="4">★★★★</option>
+                            <option value="5">★★★★★</option>
+                        </select>
+                    </div>
+                    <button
+                        type="button"
+                        onclick="submitReview()"
+                        class="bg-red-500 text-white px-6 py-2 rounded-lg hover:bg-red-600 transition">
+                        Enviar Avaliação
+                    </button>
+                </form>
+            </div>
         </div>
 
-        <!-- Script para alterar o title da página -->
+        <!-- Scripts -->
         <script>
+            let selectedSize = null;
+            let selectedColor = null;
+
+            // Função para selecionar o tamanho
+            function selectSize(size) {
+                selectedSize = size;
+                // Atualiza o estilo para indicar o tamanho selecionado
+                document
+                    .querySelectorAll('[id^="size-"]')
+                    .forEach((button) => button.classList.remove("bg-gray-300"));
+                document.getElementById(`size-${size.toLowerCase()}`).classList.add("bg-gray-300");
+                console.log("Tamanho selecionado:", size);
+            }
+
+            // Função para selecionar a cor
+            function selectColor(color) {
+                selectedColor = color;
+                // Atualiza o estilo para indicar a cor selecionada
+                document
+                    .querySelectorAll('[id^="color-"]')
+                    .forEach((button) => button.classList.remove("border-4"));
+                document.getElementById(`color-${color}`).classList.add("border-4");
+                console.log("Cor selecionada:", color);
+            }
+
             // Captura o texto do elemento H1
             const productName = document.getElementById("product-name").innerText;
-
+            const headerTitle = document.getElementById("headerText");
+            headerTitle.innerText = productName;
             // Define o título da página com o texto capturado
             document.title = productName;
+            document.headerTitle = productName;
         </script>
     </body>
 </html>
