@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -709,6 +709,10 @@ video {
   display: grid;
 }
 
+.hidden {
+  display: none;
+}
+
 .h-12 {
   height: 3rem;
 }
@@ -1248,6 +1252,10 @@ video {
 @media (min-width: 640px) {
   .sm\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .sm\:inline {
+    display: inline;
   }
 
   .sm\:h-5 {
