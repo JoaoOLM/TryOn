@@ -3,8 +3,8 @@ import Image from "next/image";
 export default function Lojas() {
   return (
     <section className="mt-6 px-4 mb-20">
-      <h2 className="text-lg font-bold mb-2">Lojas</h2>
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <h2 className="text-lg text-black-700 font-bold mb-2">Lojas</h2>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pb-10">
         {[1, 2, 3, 4].map((i) => (
           <div
             key={i}

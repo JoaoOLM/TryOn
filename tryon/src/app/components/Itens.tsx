@@ -7,7 +7,7 @@ export default function Itens() {
 
   return (
     <section className="mt-6 px-4">
-      <h2 className="text-lg font-bold mb-2">Itens</h2>
+      <h2 className="text-lg text-black-700 font-bold mb-2">Itens</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {[1, 2, 3].map((i) => (
           <div

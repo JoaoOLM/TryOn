@@ -9,7 +9,7 @@ export default function Destaques() {
 
   return (
     <section className="mt-4 px-4">
-      <h2 className="text-lg font-bold mb-2">Destaques</h2>
+      <h2 className="text-lg text-black-700 font-bold mb-2">Destaques</h2>
       <div className="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
         {imagens.map((src, index) => (
           <div
