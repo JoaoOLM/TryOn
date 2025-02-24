@@ -9,4 +9,4 @@ Vitor Rodrigues Vechin - 812287
 
 ## Deploy
 
-O deploy do projeto foi feito no seguinte link: [https://try-on-three.vercel.app/](https://try-on-three.vercel.app/)
+O deploy do projeto foi feito no seguinte link: [https://try-on-pi.vercel.app/](https://try-on-pi.vercel.app/)
